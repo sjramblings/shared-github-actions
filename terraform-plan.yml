@@ -36,14 +36,14 @@ jobs:
           audience: https://github.com/github-organisation
           aws-region: ap-southeast-2
           role-to-assume: arn:aws:iam::123456789123:role/app-github-organisation-123456789123
-          role-session-name: ehnsw-cloudplatformdocs
+          role-session-name: github-organisation
 
       - uses: actions/create-github-app-token@v1
         id: app-token
         with:
           app-id: ${{ secrets.TERRAFORM_MODULES_APP_ID }}
           private-key: ${{ secrets.TERRAFORM_MODULES_APP_PRIVATE_KEY }}
-          owner: ehnsw-terraform
+          owner: another-github-organisation
 
       - name: Terraform Initialization
         run: |
